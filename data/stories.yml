@@ -1,0 +1,98 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: add operation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: add
+  - action: utter_ask_operand1
+  - slot_was_set:
+    - operand1: 4
+  - action: utter_ask_operand2
+  - slot_was_set:
+    - operand2: 5
+  - action: utter_ask_operation
+  - slot_was_set:
+    - operation: add
+  - action: action_math_operation
+  - action: utter_result
+
+- story: subtract operation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: subtract
+  - action: utter_ask_operand1
+  - slot_was_set:
+    - operand1: 10
+  - action: utter_ask_operand2
+  - slot_was_set:
+    - operand2: 2
+  - action: utter_ask_operation
+  - slot_was_set:
+    - operation: subtract
+  - action: ActionMathOperation
+  - action: utter_result
+
+- story: multiply operation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: multiply
+  - action: utter_ask_operand1
+  - slot_was_set:
+    - operand1: 5
+  - action: utter_ask_operand2
+  - slot_was_set:
+    - operand2: 6
+  - action: utter_ask_operation
+  - slot_was_set:
+    - operation: multiply
+  - action: action_math_operation
+  - action: utter_result
+  
+- story: divide operation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: divide
+  - action: utter_ask_operand1
+  - slot_was_set:
+    - operand1: 5
+  - action: utter_ask_operand2
+  - slot_was_set:
+    - operand2: 6
+  - action: utter_ask_operation
+  - slot_was_set:
+    - operation: divide
+  - action: action_math_operation
+  - action: utter_result

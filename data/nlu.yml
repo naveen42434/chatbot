@@ -1,0 +1,59 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi there
+    - hey
+    - hi
+    - good morning
+- intent: mood_great
+  examples: |
+    - I'm feeling great
+    - I'm feeling wonderful
+    - I'm having a good day
+    - Everything is going well
+- intent: mood_unhappy
+  examples: |
+    - I'm feeling sad
+    - I'm feeling down
+    - I'm having a bad day
+    - Everything is going wrong
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - that's correct
+    - absolutely
+    - sure
+- intent: deny
+  examples: |
+    - no
+    - that's not right
+    - no way
+    - definitely not
+- intent: add
+  examples: |
+    - add
+    - add numbers
+    - sum
+    - add together
+- intent: subtract
+  examples: |
+    - subtract
+    - subtract numbers
+    - difference
+    - subtract one number from another
+- intent: multiply
+  examples: |
+    - multiply
+    - multiply numbers
+    - product
+    - multiply together
+- intent: divide
+  examples: |
+    - divide
+    - divide numbers
+    - quotient
+    - divide one number by another

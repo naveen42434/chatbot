@@ -1,0 +1,66 @@
+version: "3.1"
+
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- add
+- subtract
+- multiply
+- divide
+
+slots:
+  operand1:
+    type: float
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: operand1
+    - type: from_text
+  operand2:
+    type: float
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: operand2
+    - type: from_text
+  operation:
+    type: categorical
+    influence_conversation: false
+    values:
+    - add
+    - subtract
+    - multiply
+    - divide
+    mappings:
+    - type: from_entity
+      entity: operation
+    - type: from_text
+
+responses:
+  utter_greet:
+  - text: "Hello! How can I assist you today?"
+  utter_cheer_up:
+  - text: "Stay motivated, everything will be fine soon!"
+  utter_did_that_help:
+  - text: "Glad to hear that!"
+  utter_happy:
+  - text: "Great, keep it up!"
+  utter_goodbye:
+  - text: "Goodbye, have a nice day!"
+  utter_ask_operand1:
+  - text: "What is the first operand?"
+  utter_ask_operand2:
+  - text: "What is the second operand?"
+  utter_ask_operation:
+  - text: "What operation would you like to perform?"
+  utter_result:
+  - text: "The result is {result:.2f}."
+  utter_iamabot:
+  - text: "I am a bot."
+
+actions:
+  - action_math_operation
